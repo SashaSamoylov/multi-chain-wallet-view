@@ -1,20 +1,22 @@
 import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { useMoralis } from 'react-moralis'
+import Navbar from './components/Navbar'
+import Home from './components/Home'
+import TokenViewer from './components/TokenViewer'
+import NFTViewer from './components/NFTViewer'
+import History from './components/History'
 
 export default function App() {
-	const { authenticate, isAuthenticated, user } = useMoralis()
-
-	if (!isAuthenticated) {
-		return (
-			<div>
-				<button onClick={() => authenticate()}>Authenticate</button>
-			</div>
-		)
-	}
-
 	return (
-		<div>
-			<h1>Welcome {user.get('username')}</h1>
-		</div>
+		<Router>
+			<Navbar />
+			<Routes>
+				<Route exact path='/' element={<Home />} />
+				<Route path='/tokens' element={<TokenViewer />} />
+				<Route path='/nfts' element={<NFTViewer />} />
+				<Route path='/history' element={<History />} />
+			</Routes>
+		</Router>
 	)
 }
