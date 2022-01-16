@@ -14,8 +14,8 @@ Then run the commands
 
 ## Todo:
 
--   [ ] Integrate wallet
--   [ ] Integrate network change
+-   [x] Integrate wallet
+-   [x] Integrate network change
 -   [ ] Integrate NFT viewer
 -   [ ] Integrate token viewer
 -   [ ] Integrate recent transactions history
