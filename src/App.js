@@ -11,12 +11,14 @@ export default function App() {
 	return (
 		<Router>
 			<Navbar />
-			<Routes>
-				<Route exact path='/' element={<Home />} />
-				<Route path='/tokens' element={<TokenViewer />} />
-				<Route path='/nfts' element={<NFTViewer />} />
-				<Route path='/history' element={<History />} />
-			</Routes>
+			<div className='max-w-3xl mx-auto mt-20'>
+				<Routes>
+					<Route exact path='/' element={<Home />} />
+					<Route path='/tokens' element={<TokenViewer />} />
+					<Route path='/nfts' element={<NFTViewer />} />
+					<Route path='/history' element={<History />} />
+				</Routes>
+			</div>
 		</Router>
 	)
 }
